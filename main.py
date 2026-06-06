@@ -23,7 +23,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://urfu-things-1.onrender.com"],
+    allow_origins=["https://urfu-things-1.onrender.com", "https://alisaboules.github.io", "http://localhost:5176"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

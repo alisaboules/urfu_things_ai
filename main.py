@@ -52,6 +52,7 @@ async def upsert_item(datapoint_id: str = Form(), file: UploadFile = File(...)):
     index.upsert_datapoints([{"datapoint_id": datapoint_id, "feature_vector": emb}])
     return {"status": "ok"}
 
+
 # if __name__ == "__main__":
 #     import uvicorn
 #     port = int(os.environ.get("PORT", 8000))

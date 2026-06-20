@@ -23,7 +23,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://urfu-things-1.onrender.com", "https://alisaboules.github.io", "http://localhost:5176", "http://localhost:5173", "https://cz732927.tw1.ru/", "https://alisa-blond.vercel.app/"],
+    allow_origins=["https://urfu-things-1.onrender.com", "https://alisaboules.github.io", "http://localhost:5176", "http://localhost:5173", "https://cz732927.tw1.ru", "https://alisa-blond.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

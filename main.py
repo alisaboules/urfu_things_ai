@@ -88,6 +88,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def extract_id(neighbor_id: str):
+    return neighbor_id.replace("item_", "")
+
 def get_embedding_from_image_bytes(image_bytes: bytes):
     # Создаём объект Image напрямую из байтов
     img = Image(image_bytes=image_bytes)
@@ -105,7 +108,7 @@ async def search_similar(file: UploadFile = File(...), top_k: int = 5):
     results = [
         {
             "vector_id": neighbor.id,
-            "item_id": int(neighbor.id.replace("item_", "")) if "item_" in neighbor.id else None,
+            "item_id": extract_id(neighbor.id),
             "distance": neighbor.distance
         }
         for neighbor in response[0]

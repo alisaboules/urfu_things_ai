@@ -117,7 +117,7 @@ async def upsert_item(datapoint_id: str = Form(), file: UploadFile = File(...)):
     emb = get_embedding_from_image_bytes(image_bytes)
     index.upsert_datapoints([
         {
-            "datapoint_id": f"item_{datapoint_id}",
+            "datapoint_id": datapoint_id,
             "feature_vector": emb
         }
     ])
